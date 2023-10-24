@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/stilus.css" />
+        <title>Idegenvezetők</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Utazási Iroda idegenvezetők nyitólap</h1>
+            <ul>
+                <li>
+                    <a href="/">Főoldal</a>
+                </li>
+                <li>
+                    <a href="/utazasok">Utazások</a>
+                </li>
+                <li>
+                    <a href="/idegenvezetok/feltolt">Feltöltés</a>
+                </li>
+            </ul>
+            <h4>Idegenvezetők</h4>
+            <div id="tarto">
+                <% touristGuides.forEach(element => { %>
+                <div class="vezeto">
+                    <div class="kep">
+                        <img src="<%= element.kep %>" alt="" />
+                    </div>
+                    <div class="infok">
+                        <p>Név: <span><%= element.nev %></span></p>
+                        <p>
+                            <a
+                                href="/idegenvezetok/modositas/<%= element._id %>"
+                                >Módosítás</a
+                            >
+                        </p>
+                        <p>
+                            <button onclick="torol('<%- element._id %>')">
+                                Törlés
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        <script src="../../js/idegenvezetoFeltolt.js"></script>
+    </body>
+</html>

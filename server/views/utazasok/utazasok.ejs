@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/stilus.css" />
+        <title>Utazások szervezése</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Utazási Iroda utazások nyitólap</h1>
+            <ul>
+                <li>
+                    <a href="/">Főoldal</a>
+                </li>
+                <li>
+                    <a href="/idegenvezetok">Idegenvezetők</a>
+                </li>
+                <li>
+                    <a href="/utazasok/feltolt">Feltöltés</a>
+                </li>
+            </ul>
+            <h4>Utazások</h4>
+            <div id="utazas_tarto">
+                <% journeys.forEach(element => { %>
+                <div class="utazas_vezeto">
+                    <h5><%= element.destination %></h5>
+                    <div class="utazas_kepek">
+                        <% for( let i = 0; i < element.images.length; i++ ) { %>
+                        <img src="<%= element.images[i] %>" alt="kép" />
+                        <% } %>
+                    </div>
+                    <div class="utazas_adatok">
+                        <p>
+                            Idegenvezető:
+                            <span><%= element.touristGuide.nev %></span>
+                            <img
+                                src="<%= element.touristGuide.kep %>"
+                                alt="kép"
+                            />
+                        </p>
+                        <p>
+                            <a href="/utazasok/modositas/<%= element._id %>"
+                                >Módosítás</a
+                            >
+                        </p>
+                        <p>
+                            <button onclick="torol('<%- element._id %>')">
+                                Törlés
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        <script src="../../js/utazasFeltolt.js"></script>
+    </body>
+</html>

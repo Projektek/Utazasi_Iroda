@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../css/stilus.css" />
+        <title>Idegenvezetők módosítása</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Utazási Iroda idegenvezetők módosítása</h1>
+            <ul>
+                <li>
+                    <a href="/idegenvezetok">Idegenvezetők</a>
+                </li>
+            </ul>
+            <div id="urlap">
+                <form>
+                    <input
+                        type="hidden"
+                        name="id"
+                        id="id"
+                        value="<%= touristGuide._id %>"
+                    />
+                    <table>
+                        <caption>
+                            Idegenvezető Feltöltés
+                        </caption>
+                        <tr>
+                            <td>
+                                <label for="nev">Név:</label>
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="nev"
+                                    id="nev"
+                                    value="<%= touristGuide.nev %>"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="kep">Kép:</label>
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="kep"
+                                    id="kep"
+                                    value="<%= touristGuide.kep %>"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button onclick="modosit(event)">
+                                    Módosít
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <script src="../../js/feltolt.js"></script>
+    </body>
+</html>

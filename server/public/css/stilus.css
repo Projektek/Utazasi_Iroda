@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Tilt+Neon&display=swap');
+
+html {
+    background-color: black;
+    color: white;
+    font-size: 2em;
+}
+
+* {
+    /* border: 1px solid white; */
+    box-sizing: border-box;
+    font-family: 'Tilt Neon', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    margin: auto;
+    padding: 1em;
+    width: 80%;
+}
+
+h1 {
+    font-family: 'Share Tech Mono', monospace;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.kozepre {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+#urlap {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+td {
+    padding: 1em;
+}
+
+td:nth-of-type(2) {
+    width: 800px;
+}
+
+input[type='text'],
+select {
+    font-size: 1em;
+    width: 100%;
+}
+
+button {
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+#tarto {
+    width: 100%;
+}
+
+.vezeto {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.kep,
+.infok {
+    width: 50%;
+}
+
+.kep img {
+    width: 400px;
+}
+
+.utazas_vezeto {
+    border: 1px solid white;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.utazas_kepek img {
+    width: 24%;
+}
+
+.utazas_adatok img {
+    width: 25%;
+}

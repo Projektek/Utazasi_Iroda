@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../css/stilus.css" />
+        <title>Utazások feltöltése</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Utazási Iroda utazások feltöltés</h1>
+            <ul>
+                <li>
+                    <a href="/">Főoldal</a>
+                </li>
+                <li>
+                    <a href="/utazasok">Utazások</a>
+                </li>
+            </ul>
+            <div id="urlap">
+                <form>
+                    <input
+                        type="hidden"
+                        name="id"
+                        id="id"
+                        value="<%= journey._id %>"
+                    />
+                    <table>
+                        <caption>
+                            Utazás Feltöltés
+                        </caption>
+                        <tr>
+                            <td>
+                                <label for="destination">Helyszin:</label>
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="destination"
+                                    id="destination"
+                                    value="<%= journey.destination %>"
+                                />
+                            </td>
+                        </tr>
+                        <% for( let i = 1; i < 5; i++ ) { %>
+                        <tr>
+                            <td>
+                                <label for="kep_<%= i %>">Kép:</label>
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="kep_<%= i %>"
+                                    id="kep_<%= i %>"
+                                    value="<%= journey.images[i - 1] %>"
+                                />
+                            </td>
+                        </tr>
+                        <% } %>
+                        <tr>
+                            <td>
+                                <label for="touristGuide">Idegenvezető:</label>
+                            </td>
+                            <td>
+                                <select name="touristGuide" id="touristGuide">
+                                    <% touristGuides.forEach(element => { %> <%
+                                    if (element.nev ===
+                                    journey.touristGuide.nev) { %>
+                                    <option value="<%= element.nev %>" selected>
+                                        <%= element.nev %>
+                                    </option>
+
+                                    <% } else { %>
+                                    <option value="<%= element.nev %>">
+                                        <%= element.nev %>
+                                    </option>
+
+                                    <% }}) %>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button onclick="modosit(event)">
+                                    Módosít
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <script src="../../js/utazasFeltolt.js"></script>
+    </body>
+</html>
